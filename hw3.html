@@ -112,7 +112,7 @@
         var bgmFinished = false;
 
         class Footprint {
-            static texture = new THREE.TextureLoader().load('/vendor/textures/pinkpanther/footprint.png');
+            static texture = new THREE.TextureLoader().load('./vendor/textures/pinkpanther/footprint.png');
             constructor(position, rotation) {
                 this.print = new THREE.Mesh(new THREE.PlaneGeometry(15, 15), new THREE.MeshBasicMaterial({ map: Footprint.texture, alphaTest: 0.5, transparent: true, side: THREE.DoubleSide }));
                 this.print.position.copy(position);
@@ -243,7 +243,7 @@
 
             static makeArm(k, opc, order = 'XYZ') {
                 var textureLoader = new THREE.TextureLoader();
-                let path = '/vendor/textures/pinkpanther/';
+                let path = './vendor/textures/pinkpanther/';
                 var cubeMaterials =
                     [
                         new THREE.MeshBasicMaterial({ map: textureLoader.load(path + 'hand_up.png'), side: THREE.DoubleSide, transparent: true, polygonOffset: true, polygonOffsetFactor: 0.1 }),
@@ -265,7 +265,7 @@
 
             static makeLeg(k, opc, order = 'XYZ') {
                 var textureLoader = new THREE.TextureLoader();
-                let path = '/vendor/textures/pinkpanther/';
+                let path = './vendor/textures/pinkpanther/';
                 var legMat =
                     [
                         new THREE.MeshBasicMaterial({ map: textureLoader.load(path + 'hand_up.png'), side: THREE.DoubleSide, transparent: true, polygonOffset: true, polygonOffsetFactor: 0.1 }),
@@ -309,7 +309,7 @@
                 var headGroup = new THREE.Group();
                 var mat = new THREE.MeshNormalMaterial({ transparent: true, opacity: opc });
                 var textureLoader = new THREE.TextureLoader();
-                let path = '/vendor/textures/pinkpanther/';
+                let path = './vendor/textures/pinkpanther/';
                 var cubeMaterials =
                     [
                         new THREE.MeshBasicMaterial({ map: textureLoader.load(path + 'h2.png'), side: THREE.DoubleSide, transparent: true }),
@@ -334,7 +334,7 @@
 
             static makeTorso(k, opc) {
                 var textureLoader = new THREE.TextureLoader();
-                let path = '/vendor/textures/pinkpanther/';
+                let path = './vendor/textures/pinkpanther/';
                 var cubeMaterials =
                     [
                         new THREE.MeshBasicMaterial({ map: textureLoader.load(path + 'body3.png'), side: THREE.DoubleSide, transparent: true }),
