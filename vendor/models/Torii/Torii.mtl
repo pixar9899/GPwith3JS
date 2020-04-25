@@ -1,0 +1,24 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Amarillo
+map_Kd Japanese_Arch_Low_Amarillo_BaseColor.png
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.803922 0.694118 0.086275
+Ks 0.000000 0.000000 0.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl Rojo
+map_Kd Japanese_Arch_Low_Rojo_BaseColor.png
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.823529 0.090196 0.090196
+Ks 0.000000 0.000000 0.000000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 1
