@@ -5,34 +5,35 @@ function onProgress(xhr) {
     }
 }
 
-function readModel(modelName, objName = 'OBJ', targetSize = 40, parent, turn = undefined, mtlName = undefined) {
-    var onError = function(xhr) {};
+function readModel(modelName, objName = 'OBJ', targetSize = 40, parent, other) {
+    var onError = function (xhr) { };
 
     var mtlLoader = new THREE.MTLLoader();
-
+    let turn = other !== undefined ? other.turn : undefined;
+    let mtlName = other !== undefined ? other.mtlName : undefined;
+    let prevPath = other !== undefined ? other.prevPath : undefined;
     let mtl = modelName;
-    if (mtlName !== undefined) {
-        mtl = mtlName;
-    }
-    mtlLoader.setPath('vendor/models/' + modelName + '/');
-    mtlLoader.load(mtl + '.mtl', function(materials) {
+    if (mtlName !== undefined) mtl = mtlName;
+    if (prevPath === undefined) prevPath = 'vendor/models/';
+    mtlLoader.setPath(prevPath + modelName + '/');
+    mtlLoader.load(mtl + '.mtl', function (materials) {
 
         materials.preload();
 
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.setPath('vendor/models/' + modelName + '/');
-        objLoader.load(modelName + '.obj', function(object) {
+        objLoader.setPath(prevPath + modelName + '/');
+        objLoader.load(modelName + '.obj', function (object) {
             console.log("model name:" + modelName);
             let theObject = unitize(object, targetSize);
             // theObject.add(new THREE.BoxHelper(theObject));
             theObject.name = objName;
-            theObject.traverse(function(object) {
-                    if (object instanceof THREE.Mesh) {
-                        object.castShadow = true
-                        object.receiveShadow = true
-                    }
-                })
+            theObject.traverse(function (object) {
+                if (object instanceof THREE.Mesh) {
+                    object.castShadow = true
+                    object.receiveShadow = true
+                }
+            })
             //把這個model放入父層
             parent.add(theObject);
             //不須改變軸的方向
