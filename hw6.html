@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<!-- three.js library -->
+	<script src='https://cdn.jsdelivr.net/npm/ar.js@2.2.2/three.js/examples/vendor/three.js/build/three.min.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/ar.js@2.2.2/three.js/build/ar.min.js"></script>
+
+	<style>
+		#navbar {
+			z-index: 10;
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			margin: 0 auto;
+			color: #ff0000;
+			font-size: 15px;
+		}
+
+		#overlay {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgba(0, 0, 0, 0.7);
+		}
+
+		#overlay button {
+			background: #ffffff;
+			border: 0;
+			color: #000000;
+			padding: 16px 20px;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body style='margin: 0px; overflow: hidden; font-family: Monospace;'>
+	<div id="navbar" class="align-middle">
+		<a class="nav-link" href="index.html">Home</a>
+	</div>
+	<div id="overlay">
+		<button id="startButton">Play</button>
+	</div>
+	<audio src='./vendor/hw6/water.mp3' autoplay></audio>
+	<script src="./vendor/hw6/main.js"></script>
+</body>

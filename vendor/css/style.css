@@ -42,3 +42,25 @@ body {
     background: #fa3466; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
+
+canvas {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+nav{
+    background-color: #ffa8bd;
+}
+
+.home-btn{
+    color:#a614d3;
+}
+
+.info-text{
+    color:#9d14d3;
+}
+
+.home-icon{
+    color:#fa3466;
+}
